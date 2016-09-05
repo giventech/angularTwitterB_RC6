@@ -1,4 +1,3 @@
-/// <reference path="../../../typings/main/ambient/jasmine/index.d.ts" />
 /* tslint:disable:no-unused-variable */
 
 
