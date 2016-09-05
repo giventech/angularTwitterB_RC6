@@ -1,0 +1,11 @@
+<form  class="form-inline" formGroupName = "myForm">
+  <div class="form-group" label="" >
+    <input class="form-control"  placeholder="new-todo"
+      #todoTitle="ngModel" ngModel
+       name="todoTitle">
+  </div>
+  <button class="btn btn-default" type="submit" [disabled]="!todoTitle.valid"> submite </button>
+</form>
+
+
+ 

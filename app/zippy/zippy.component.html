@@ -1,0 +1,9 @@
+<!-- Insert bootstrap tab where to navigate-->
+<p>
+ Assignees for this tasks are:
+
+</p>
+<div class ="alert alert-info" *ngIf="(todoassignees)">Loading assignees </div>
+<li class="list-group-item" *ngFor="let todoassignee of todoassignees" >
+       {{todoassignee.name}} {{todoassignee.role}}
+ </li>
