@@ -3,7 +3,7 @@ import { TodosServiceService} from './todos-service.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1> <app-zippy></app-zippy><app-todos></app-todos><app-new-todo></app-new-todo>',
+    template: '<h1>VIFM Angular 2 Seed Project</h1> <app-zippy></app-zippy><app-todos></app-todos><app-new-todo></app-new-todo>',
     providers: [TodosServiceService]
 })
 export class AppComponent {

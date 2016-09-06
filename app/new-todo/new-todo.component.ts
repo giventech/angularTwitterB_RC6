@@ -16,13 +16,15 @@ import { TodosServiceService} from '../todos-service.service';
 export class NewTodoComponent implements OnInit {
   myForm:FormGroup; 
   // TODO  find a ways to initialise the FormBuilder
-  // constructor(private formBuilder:FormBuilder) {}
-  constructor() {}
+ //  constructor(private formBuilder:FormBuilder) {}
+  constructor() {
+     this.myForm =  new FormGroup({}); 
+  }
 
   ngOnInit() {
-    //  this.myForm =  this.formBuilder.group({
-    //    todoTitle:['',Validators.required] 
-    // });
+    //  this.myForm = 
+         this.myForm =  new FormGroup({}); 
+     
   }
 
 }
