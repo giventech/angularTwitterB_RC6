@@ -3,7 +3,24 @@ import { TodosServiceService} from './todos-service.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>VIFM Angular 2 Seed Project</h1> <app-zippy></app-zippy><app-todos></app-todos><app-new-todo></app-new-todo>',
+template: `<div class="container" >
+<h1>
+
+  My todo list:
+  
+</h1>
+
+<ul class="nav nav-tabs nav-justified">
+     <li> <a  routerLink="/assignee">Assignees</a></li>
+     <li> <a  routerLink="/todo">Todo</a></li>
+</ul>
+   <app-new-todo>
+  </app-new-todo>
+<!-- Routed views go here -->
+<router-outlet>
+  </router-outlet>
+
+</div>`,
     providers: [TodosServiceService]
 })
 export class AppComponent {
