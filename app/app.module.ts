@@ -4,18 +4,20 @@ import { Routes, RouterModule   } from '@angular/router';
 import { FormsModule   } from '@angular/forms';
 import { HttpModule   } from '@angular/http';
 
+
 import { AppComponent }  from './app.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
 import { TodosComponent } from './todos/todos.component';
 import { ShoutPipe} from  './shout.pipe';
  
+ 
  export const TodoRoutes: Routes = [
    
             { path:'assignee',  component: ZippyComponent },
             { path:'todo',  component: TodosComponent },
             { path:'newtodo',  component: TodosComponent },
-            {path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
+            { path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
     
    
  ];
