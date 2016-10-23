@@ -8,6 +8,7 @@ import { AppComponent }  from './app.component';
 import { ZippyComponent } from './zippy/zippy.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
 import { TodosComponent } from './todos/todos.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 import { ShoutPipe} from  './shout.pipe';
  
  export const TodoRoutes: Routes = [
@@ -15,7 +16,7 @@ import { ShoutPipe} from  './shout.pipe';
             { path:'assignee',  component: ZippyComponent },
             { path:'todo',  component: TodosComponent },
             { path:'newtodo',  component: TodosComponent },
-            {path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
+            { path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
     
    
  ];
@@ -25,7 +26,7 @@ import { ShoutPipe} from  './shout.pipe';
     // Forms
     HttpModule,
     FormsModule],
-  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe ],
+  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
