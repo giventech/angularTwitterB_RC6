@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params }   from '@angular/router';
+import { Todo }   from '../Todo';
 
 @Component({
   moduleId: module.id,
@@ -7,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['task-details.component.css']
 })
 export class TaskDetailsComponent implements OnInit {
+  
+  @Input() todo: Todo;
+  constructor(private taskDetailService:TaskDetailsService,
+            private route: ActivatedRoute,
+            private location: Location  
+     ) { }
 
-  constructor() { }
+  ngOnInit(): void {
+  this.route.params.forEach((params: Params) => {
+    let id = +params['id'];
+    this.taskDetailService.getTodo(id)
+      .then(todo => this.todo = todo);
+  });
+}
 
-  ngOnInit() {
-  }
 
 }

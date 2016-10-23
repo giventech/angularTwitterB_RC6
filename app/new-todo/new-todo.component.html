@@ -6,7 +6,8 @@
   </div>
   <button class="btn btn-default" type="submit" [disabled]="!todoTitle.valid"> submite </button>
 </form>
-
+<!-- the [] refers to an object from the Model -->
+<app-task-details [taskDetails]="selectedTaskDetails"></app-task-details>
 
 
  
