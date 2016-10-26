@@ -62,14 +62,15 @@ export class TodosServiceService {
 
 
 
- getTodo(id: string): Todo {
+ getTodo(id: number): Todo {
    var aTodo: Todo; 
    // return this.getTodos().filter((todo => id).subscribe
      this.getTodos().subscribe(todos=>
      {  
        // Iterating over the Todo[]
+       // The + converts a string in a number
        todos.forEach(element => {
-        if (element != null && element.id == id) {
+        if (element != null && +element.id == id) {
           aTodo = element;
       }
       });

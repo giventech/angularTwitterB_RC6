@@ -15,7 +15,7 @@ export class TaskDetailsComponent implements OnInit {
   // This is the input parameter of a component
   
   @Input() todo: Todo;
-  constructor(private taskDetailService:To,
+  constructor(private todoService:TodosServiceService,
               private route: ActivatedRoute,
               private location: Location  
      ) { }
@@ -23,8 +23,8 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit(): void {
   this.route.params.forEach((params: Params) => {
     let id = +params['id'];
-    this.taskDetailService.getTodo(id)
-      .then(todo => this.todo = todo);
+     this.todo =this.todoService.getTodo(id);
+      // .then(todo => this.todo = todo);
   });
 }
 
