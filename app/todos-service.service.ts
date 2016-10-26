@@ -7,13 +7,15 @@ import {Observable} from  'rxjs/Rx';
 
 
 const todos:Todo[] = [
-  {completed:false,
+    { id: "1",
+    completed:false,
     title:"This is a title"},
-    {completed:false,
+    { id: "2",
+      completed:false,
     title:"This is a title 2"},
-    {completed:true,
-    title:"This is a title 3"}
-  
+    { id: "3",
+      completed:true,
+      title:"This is a title 3"}
 ]; 
 
 //Dummy annotation from Angular to indicate Depencdency injection
@@ -26,7 +28,8 @@ export class TodosServiceService {
 //   }
 
   constructor(private http:Http) {}
-   getTodos(): Observable<Todo[]> {
+
+  getTodos(): Observable<Todo[]> {
      var request = this.http
                        .get("public/api/todos.json")
                        .map(response => <Todo[]> response.json());
@@ -39,10 +42,40 @@ export class TodosServiceService {
                       //      return mapped; 
                       //  } }) );
      return request;
-   }
+ }
+ /**
+  * Call the http service getTodos which return an Observable<Todo[]> 
+  * The data (Todo[]) of this Observable fetch via subsribe  
+  */
+//  getTodo(id: number): Todo {
+//    var aTodo: Todo; 
+//    // return this.getTodos().filter((todo => id).subscribe
+//      this.getTodos().
+//      subscribe(todos=>{
+       
+//        if (todos[id] != null) {
+//          aTodo = todos[id];}
+//        }
+//      );
+//     return aTodo;
+//  }
 
-  
-}
+
+
+ getTodo(id: string): Todo {
+   var aTodo: Todo; 
+   // return this.getTodos().filter((todo => id).subscribe
+     this.getTodos().subscribe(todos=>
+     {  
+       // Iterating over the Todo[]
+       todos.forEach(element => {
+        if (element != null && element.id == id) {
+          aTodo = element;
+      }
+      });
+    })
+     return aTodo;
+  }
 
 // @Injectable()
 // export class MockTodoService  extends TodosServiceService {

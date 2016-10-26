@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Todo }   from '../Todo';
+import { TodosServiceService} from '../todos-service.service';
+
 
 @Component({
   moduleId: module.id,
@@ -10,10 +12,12 @@ import { Todo }   from '../Todo';
 })
 export class TaskDetailsComponent implements OnInit {
   
+  // This is the input parameter of a component
+  
   @Input() todo: Todo;
-  constructor(private taskDetailService:TaskDetailsService,
-            private route: ActivatedRoute,
-            private location: Location  
+  constructor(private taskDetailService:To,
+              private route: ActivatedRoute,
+              private location: Location  
      ) { }
 
   ngOnInit(): void {
@@ -23,6 +27,5 @@ export class TaskDetailsComponent implements OnInit {
       .then(todo => this.todo = todo);
   });
 }
-
 
 }

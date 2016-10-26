@@ -14,13 +14,11 @@ import { ShoutPipe} from  './shout.pipe';
  
  
  export const TodoRoutes: Routes = [
-   
-            { path:'assignee',  component: ZippyComponent },
-            { path:'todo',  component: TodosComponent },
-            { path:'newtodo',  component: TodosComponent },
-            { path:'tododetails/:id',  component: TaskDetailsComponent },
-            { path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
-    
+   { path:'assignee',  component: ZippyComponent },
+   { path:'todo',  component: TodosComponent },
+   { path:'newtodo',  component: TodosComponent },
+   { path:'tododetails/:id',  component: TaskDetailsComponent },
+   { path: '',  redirectTo: '/newtodo',    pathMatch: 'full'}
    
  ];
 @NgModule({

@@ -2,9 +2,10 @@
 
 <div class ="alert alert-info" *ngIf="!(todos$ | async)"> loading todos </div>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let todo of todos$ | async" [class.completed] = "todo.completed">
+  <li class="list-group-item" *ngFor="let todo of todos$ | async" (click)="onSelect(todo)" [class.completed] = "todo.completed">
     <input type="checkbox" [(ngModel)] = "todo.completed" >
-    {{todo.title | shout}}
+     <span class="badge"> {{todo.id}}</span>  {{todo.title | shout}}
+   
   </li>
 </ul>
 

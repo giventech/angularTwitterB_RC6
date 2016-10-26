@@ -19,11 +19,8 @@ const todosAssignee: TodoAssignee[] = [
   ];
 @Injectable()
 export class TodoAssigneesService {
-  
-
   constructor() { }
-
-  getTodoAssignees(): TodoAssignee[] {
+   getTodoAssignees(): TodoAssignee[] {
     
     return todosAssignee;
 
