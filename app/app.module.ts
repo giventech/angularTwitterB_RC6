@@ -27,7 +27,7 @@ import { ShoutPipe} from  './shout.pipe';
     // Forms
     HttpModule,
     FormsModule],
-  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent ],
+  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

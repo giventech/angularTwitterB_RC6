@@ -5,7 +5,7 @@ import {ShoutPipe} from  '../shout.pipe';
 import {Observable} from  'rxjs/Rx';
 import {NewTodoComponent} from  '../new-todo';
 import {ZippyComponent} from  '../zippy';
-import {Router} from  '@angular/Router';
+import {Router} from  '@angular/router';
 
 @Component({
   moduleId: module.id,

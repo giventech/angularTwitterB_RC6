@@ -1,4 +1,15 @@
 <p>
-  task-details works!
+hello how are you
 </p>
+
+<div *ngIf="todo">
+  <h2>{{todo.name}} details!</h2>
+  <div>
+    <label>id: </label>{{todo.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="todo.title" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
   

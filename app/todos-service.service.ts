@@ -4,7 +4,7 @@ import {Http, RequestOptions} from '@angular/http';
 import {MockBackend} from '@angular/http/testing';
 import 'rxjs/Rx';
 import {Observable} from  'rxjs/Rx';
-
+ 
 
 const todos:Todo[] = [
     { id: "1",
@@ -61,21 +61,36 @@ export class TodosServiceService {
 //  }
 
 
-
- getTodo(id: number): Todo {
+ // When the value is returned as an Observable ten it will be availble in an asynchronous manner
+ // Returning the value as a simple Todo would infer the chance of it beeing null 
+ // In an asynchronous model
+ getTodo(id: number): Observable<Todo>{
    var aTodo: Todo; 
+   var aString: string;
    // return this.getTodos().filter((todo => id).subscribe
-     this.getTodos().subscribe(todos=>
+     this.getTodos().
+     subscribe(todos=>
      {  
        // Iterating over the Todo[]
-       // The + converts a string in a number
+       // The +converts a string in a number
        todos.forEach(element => {
         if (element != null && +element.id == id) {
+          console.log("Title"+element.title)
+          console.log("ID  "+element.id)
           aTodo = element;
+          aString = element.title;
+          console.log("a Todo Title"+aTodo.title)
+          console.log("a Todo ID  "+aTodo.id)
+           console.log("a String  "+aString)
+
       }
       });
     })
-     return aTodo;
+      console.log("a Todo return title1)"+aTodo.title)
+      console.log("a Todo return ID  "+aTodo.id)
+      console.log("a String 2 "+aString)
+
+     return Observable.of(aTodo);
   }
 
 // @Injectable()
@@ -93,7 +108,7 @@ export class TodosServiceService {
 //   }
   
   
-//}
+}
   
   
 

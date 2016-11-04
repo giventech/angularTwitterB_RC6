@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TodosServiceService} from './todos-service.service';
 
 @Component({
-    selector: 'my-app',
+selector: 'my-app',
 template: `<div class="container" >
 <h1>
 

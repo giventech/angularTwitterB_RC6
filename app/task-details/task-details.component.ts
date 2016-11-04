@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Params }   from '@angular/router';
+import { ActivatedRoute, Router, Params }   from '@angular/router';
 import { Todo }   from '../Todo';
 import { TodosServiceService} from '../todos-service.service';
+import { Location }           from '@angular/common';
 
 
 @Component({
@@ -12,19 +13,24 @@ import { TodosServiceService} from '../todos-service.service';
 })
 export class TaskDetailsComponent implements OnInit {
   
-  // This is the input parameter of a component
-  
+  // Todo is parameter that the componen expect
+  // ActivatedRoute provide access to request parameters
   @Input() todo: Todo;
   constructor(private todoService:TodosServiceService,
               private route: ActivatedRoute,
               private location: Location  
      ) { }
-
+  //Navigate back
+  goBack(): void {
+    this.location.back(); 
+  }
   ngOnInit(): void {
   this.route.params.forEach((params: Params) => {
     let id = +params['id'];
      this.todo =this.todoService.getTodo(id);
-      // .then(todo => this.todo = todo);
+     console.log("Todo name "+this.todo.id);
+     console.log("Todo id "+this.todo.id);
+     // .then(todo => this.todo = todo);
   });
 }
 
