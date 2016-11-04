@@ -13,8 +13,12 @@ import { Location }           from '@angular/common';
 })
 export class TaskDetailsComponent implements OnInit {
   
-  // Todo is parameter that the componen expect
+   
+  // public todo: Todo; Expose the this variable for binding
+  // @Input() todo: Todo; would indicate that TaskDetailsComponent expects and message Input to be emmited at some point
   // ActivatedRoute provide access to request parameters
+  // Creating todo variable  as an input or public propertie
+
   @Input() todo: Todo;
   constructor(private todoService:TodosServiceService,
               private route: ActivatedRoute,
