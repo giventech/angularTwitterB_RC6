@@ -19,7 +19,7 @@ export class TaskDetailsComponent implements OnInit {
   // ActivatedRoute provide access to request parameters
   // Creating todo variable  as an input or public propertie
 
-  @Input() todo: Todo;
+  public todo: Todo;
   constructor(private todoService:TodosServiceService,
               private route: ActivatedRoute,
               private location: Location  
@@ -31,11 +31,14 @@ export class TaskDetailsComponent implements OnInit {
   ngOnInit(): void {
   this.route.params.forEach((params: Params) => {
     let id = +params['id'];
-     this.todo =this.todoService.getTodo(id);
-     console.log("Todo name "+this.todo.id);
-     console.log("Todo id "+this.todo.id);
-     // .then(todo => this.todo = todo);
+     this.todoService.getTodos()
+     .subscribe(arrayTodo=>
+      this.todo = arrayTodo.find((item) => +item.id == id)
+     )
   });
+  // console.log("Todo name "+this.todo.title);
+  //    console.log("Todo id "+this.todo.id);
+    
 }
 
 }
