@@ -11,6 +11,7 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
 import { TodosComponent } from './todos/todos.component';
 import { TaskDetailsComponent } from './task-details/task-details.component';
+import { AddTaskForm } from './add-task/add-task-form.component';
 import { ShoutPipe} from  './shout.pipe';
  
  
@@ -28,7 +29,7 @@ import { ShoutPipe} from  './shout.pipe';
     // Forms
     HttpModule,
     FormsModule],
-  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent],
+  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent, AddTaskForm],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

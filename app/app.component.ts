@@ -9,7 +9,7 @@ template: `<div class="container" >
   My todo list:
   
 </h1>
-
+<add-task-form></add-task-form>
 <ul class="nav nav-tabs nav-justified">
      <li> <a  routerLink="/assignee">Assignees</a></li>
      <li> <a  routerLink="/todo">Todo</a></li>

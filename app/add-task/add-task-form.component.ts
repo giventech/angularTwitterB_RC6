@@ -18,13 +18,14 @@ import {Component} from '@angular/core';
  
       <button type="submit" class="ui button">Submit</button>  
     </form>  
-  </div>  `
+  </div> `
 
 
 })
 export class AddTaskForm  {
     onsubmit(form:any){
         console.log("The form has been submitted");
+        alert("I am submitting now")
     }
 
 
