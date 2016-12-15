@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,Validators,FormGroup} from '@angular/forms';
+import {FormBuilder,Validators,FormGroup, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
 import { TodosServiceService} from '../todos-service.service';
-import { AddTaskForm} from '../add-task/add-task-form';
+import { AddTaskForm} from '../add-task/add-task-form.component';
 
 
 
@@ -21,11 +21,28 @@ export class NewTodoComponent implements OnInit {
   constructor() {
      this.myForm =  new FormGroup({}); 
   }
-
   ngOnInit() {
-    //  this.myForm = 
-         this.myForm =  new FormGroup({}); 
-     
+         // This constructs a FormGroup which FormControl Elements can
+         this.myForm = new FormGroup({
+           todoTitle:     new  FormControl(),
+           todoName :     new  FormControl(),
+           todoSurname :  new  FormControl()
+         }); 
   }
 
+  onSubmit(form:any){
+     console.log("Title: "+form.todoTitle);
+     console.log("Name: "+form.todoName);
+     console.log("Name: "+form.todoSurname);
+      console.log("Forms ",form);
+  }
+
+   onSubmitFormValue(form:any){
+     console.log("Title: ",form);
+  }
+
+  onInputEvent (){
+     console.log("Input ");
+     
+  }
 }

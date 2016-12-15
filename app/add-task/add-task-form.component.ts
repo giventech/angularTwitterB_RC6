@@ -23,10 +23,8 @@ import {Component} from '@angular/core';
 
 })
 export class AddTaskForm  {
-    onsubmit(form:any){
-        console.log("The form has been submitted");
-        alert("I am submitting now")
+    onSubmit(form:any){
+      console.log("The form has been submitted");
+      console.log('you submitted value:', form);  
     }
-
-
 }

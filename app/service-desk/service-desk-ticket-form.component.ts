@@ -23,6 +23,6 @@ class NewRequestForm {
     onSubmit(data: string) {
         this.submitted = true;
         this.data = JSON.stringify(data, null, 2);
-        console.log(skuthis.data);
+        console.log(this.data);
     }
 }

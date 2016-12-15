@@ -5,9 +5,7 @@ import { TodosServiceService} from './todos-service.service';
 selector: 'my-app',
 template: `<div class="container" >
 <h1>
-
   My todo list:
-  
 </h1>
 <add-task-form></add-task-form>
 <ul class="nav nav-tabs nav-justified">
@@ -26,8 +24,7 @@ template: `<div class="container" >
 export class AppComponent {
      newTitle = 'app works!';
     doSomething() {
-    var title =  'test';
-    this.newTitle =  'new value';
-
+      var title =  'test';
+      this.newTitle =  'new value';
   }
  }

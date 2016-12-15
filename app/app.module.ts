@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule   } from '@angular/router';
-
+// 
 import { FormsModule,ReactiveFormsModule     } from '@angular/forms';
 import { HttpModule   } from '@angular/http';
 
@@ -26,9 +26,10 @@ import { ShoutPipe} from  './shout.pipe';
 @NgModule({
   imports: [ BrowserModule, // Router
     RouterModule.forRoot(TodoRoutes), 
-    // Forms
     HttpModule,
-    FormsModule],
+    FormsModule,
+     // Forms  angular 2.0 module
+    ReactiveFormsModule],
   declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent, AddTaskForm],
   bootstrap: [ AppComponent ]
 })

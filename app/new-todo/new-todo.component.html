@@ -1,12 +1,48 @@
-<form  class="form-inline" formGroupName = "myForm">
+
+<!--  -->
+<div  class="form-inline"  [formGroup] = "myForm" class="ui form">
+  <input class="form-control" label="Title" placeholder="Title" formControlName="todoTitle">
+  <br>
+  <input class="form-control" label="Name" placeholder="Name" formControlName="todoName">
+  <br>
+  <input class="form-control" label="Surname"  placeholder="Surname"  formControlName="todoSurname">
+  <button  type="submit" [disabled]="!myForm.valid"> submite </button>
+</div>
+
+<!-- 
+  1) - myForm.value   -  pass on key/values pairs for all the form element that we are dealing with
+  2) - (ngSubmit)     - is the event bound to the  javaScript event
+  3) - whenSubmitted  - is a custom made methods implemented in our class  
+-->
+<form [formGroup]="myForm" 
+        (ngSubmit)="onSubmit(myForm.value)"
+         class="ui form">
+ <br>
+ <p> This is a another form to develop</p>
+ <button type="submit" class="ui button">Submit Button</button>  
+ </form>  
+
+
+<!-- Declaring a formValue variable of type NgForm ( inherit of FormGRoup)  using the directive "ngForm" -->
+<form  #formValue="ngForm"  (ngSubmit)="onSubmitFormValue(formValue.value)"  >
+
+  <input class="form-control" name="title" ngModel>
+  <input class="form-control" name="name" ngModel>
+  <input class="form-control" name="Surname" ngModel>
+  <button type="submit" class="ui button">Submit Button</button>  
+</form>
+
+<!--
+  Deprecated forms, formGroupName  is no longer used
+  
+  <form  class="form-inline" formGroupName = "myForm">
   <div class="form-group" label="" >
     <input class="form-control"  placeholder="new-todo"
       #todoTitle="ngModel" ngModel
        name="todoTitle">
   </div>
   <button class="btn btn-default" type="submit" [disabled]="!todoTitle.valid"> submite </button>
-</form>
-
+</form>-->
 <!-- the [] refers to an object from the Model -->
 <!--<app-task-details [todo]="selectedTaskDetails"></app-task-details>-->
 
