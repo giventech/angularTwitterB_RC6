@@ -1,12 +1,12 @@
 
-<!--  -->
+<h2>FormGroup: attached to a myForm variable which is instanciated in the class' component  </h2>
 <div  class="form-inline"  [formGroup] = "myForm" class="ui form">
   <input class="form-control" label="Title" placeholder="Title" formControlName="todoTitle">
   <br>
   <input class="form-control" label="Name" placeholder="Name" formControlName="todoName">
   <br>
   <input class="form-control" label="Surname"  placeholder="Surname"  formControlName="todoSurname">
-  <button  type="submit" [disabled]="!myForm.valid"> submite </button>
+  <button class="btn btn-default" type="submit" [disabled]="!myForm.valid"> submite </button>
 </div>
 
 <!-- 
@@ -14,14 +14,17 @@
   2) - (ngSubmit)     - is the event bound to the  javaScript event
   3) - whenSubmitted  - is a custom made methods implemented in our class  
 -->
+
+<h2>FormGroup: created form 'myForm',  FormGroup instance + Form field passed on to the model  ' </h2>
 <form [formGroup]="myForm" 
         (ngSubmit)="onSubmit(myForm.value)"
          class="ui form">
  <br>
- <p> This is a another form to develop</p>
+ <p>
  <button type="submit" class="ui button">Submit Button</button>  
  </form>  
 
+<h2>FormGroup: Inline variable declaration + ngForm directive</h2>
 
 <!-- Declaring a formValue variable of type NgForm ( inherit of FormGRoup)  using the directive "ngForm" -->
 <form  #formValue="ngForm"  (ngSubmit)="onSubmitFormValue(formValue.value)"  >
@@ -31,6 +34,29 @@
   <input class="form-control" name="Surname" ngModel>
   <button type="submit" class="ui button">Submit Button</button>  
 </form>
+
+
+<h2>FormGroup:FormBuilder instance</h2>
+<form [formGroup]="anotherForm" 
+        (ngSubmit)="onSubmit(anotherForm.value)"
+        class="ui form">
+ <br>
+
+<div class="field"   [class.error]="!todoTitle.valid && todoTitle.touched">  
+          <input class="form-control"  id="otherFormName"  placeholder="This is another form name" [formControl]="anotherForm.controls['todoTitle']">
+          <input class="form-control"  id="otherFormName"  placeholder="This is another form name" [formControl]="anotherForm.controls['todoName']">
+          <input class="form-control"  id="otherFormName"  placeholder="This is another form name" [formControl]="anotherForm.controls['todoSurname']">
+     <div *ngIf="!todoTitle.valid"  
+                  class="ui error message">Title is invalid</div>
+      <div *ngIf="todoTitle.hasError('required')"  
+           class="ui error message">Todo title is required </div>
+  </div>
+ <p>
+ <button type="submit" class="ui button">Submit Button</button>  
+</form>  
+
+
+
 
 <!--
   Deprecated forms, formGroupName  is no longer used
