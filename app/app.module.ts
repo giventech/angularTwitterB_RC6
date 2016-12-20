@@ -3,6 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule   } from '@angular/router';
 // 
 import { FormsModule,ReactiveFormsModule     } from '@angular/forms';
+
+import {MdButtonModule} from  '@angular2-material/button';
+import {MdCardModule} from  '@angular2-material/card';
+import {MdIconModule} from  '@angular2-material/icon';
+
+import {MdIconRegistry} from  '@angular2-material/icon';
 import { HttpModule   } from '@angular/http';
 
 
@@ -24,13 +30,19 @@ import { ShoutPipe} from  './shout.pipe';
    
  ];
 @NgModule({
-  imports: [ BrowserModule, // Router
+  imports: [ BrowserModule,
+    //Angular Material
+    MdCardModule,
+    MdButtonModule, 
+    // Router
     RouterModule.forRoot(TodoRoutes), 
     HttpModule,
-    FormsModule,
      // Forms  angular 2.0 module
+    FormsModule,
     ReactiveFormsModule],
-  declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent, AddTaskForm],
-  bootstrap: [ AppComponent ]
+    declarations: [ AppComponent,ZippyComponent,NewTodoComponent,TodosComponent,ShoutPipe,TaskDetailsComponent, AddTaskForm],
+    bootstrap: [ AppComponent ],
+    providers: [ MdIconRegistry]
+    
 })
 export class AppModule { }
